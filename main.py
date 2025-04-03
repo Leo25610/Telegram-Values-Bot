@@ -1,17 +1,24 @@
 import telebot
 import requests
 from extensions import Converter,ConvertionException
+from dotenv import load_dotenv
+import os
 
 
+load_dotenv('config.env')
+TOKEN = os.getenv("TOKEN")
+API = os.getenv("API_KEY")
 
-bot = telebot.TeleBot(config.TOKEN)
-api = config.API_KEY
+if not TOKEN or not API:
+    raise ValueError("Не удалось загрузить токен или API-ключ из .env файла!")
+
+bot = telebot.TeleBot(TOKEN)
 
 
 #Обрабатывает команду: "/values"(список доступных валют)
 @bot.message_handler(commands=['values'])
 def send_list_of_values(message):
-    url = f"https://openexchangerates.org/api/currencies.json?app_id={api}"
+    url = f"https://openexchangerates.org/api/currencies.json?app_id={API}"
     response=requests.get(url)
     data= response.json()
     currincies=[f'{key} : {value}' for key,value in data.items()]

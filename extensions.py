@@ -1,11 +1,18 @@
 import requests
-from config import API_KEY
+from dotenv import load_dotenv
+import os
+
+load_dotenv('config.env')
+bot = os.getenv("TOKEN")
+API = os.getenv("API_KEY")
+
+
 class ConvertionException(Exception):
     pass
 class Converter:
     @staticmethod
     def convert_currency(base, quote, amount):  #Функция конвертации валюты
-        url = f"https://openexchangerates.org/api/latest.json?app_id={API_KEY}"
+        url = f"https://openexchangerates.org/api/latest.json?app_id={API}"
         response = requests.get(url)
         data = response.json()
 
