@@ -1,6 +1,7 @@
 # Telegram-Values-Bot
 
 [RU] Валютный бот
+
 Простой бот для отображения курсов валют и конвертации. Не выполняет реальный обмен валют.
 
 Возможности
@@ -19,6 +20,7 @@
 
 
 [EN] Currency Bot
+
 A simple Telegram bot for checking currency exchange rates and converting between currencies. This bot does not perform actual currency exchanges.
 
 Features
