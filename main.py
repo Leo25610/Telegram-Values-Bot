@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import os
 
 
-load_dotenv('config.env')
+load_dotenv('config.env')    #Choose your .env file/Выбирете ваш .env файл
 TOKEN = os.getenv("TOKEN")
 API = os.getenv("API_KEY")
 
