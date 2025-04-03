@@ -1,0 +1,14 @@
+# Конфиги
+config.env
+*.env
+
+# Виртуальное окружение
+.venv/
+venv/
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+
+# Файлы IDE
+.idea/
